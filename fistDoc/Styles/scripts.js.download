@@ -1,0 +1,21 @@
+svg4everybody({
+    polyfill: true
+});
+
+jQuery(function ($) {
+    $(document).ready(function () {
+        'use strict';
+
+        var body = $('body');
+        var fullscreenMenu = $('.js-fullscreen-nav');
+
+        body.on('click', '.js-toggle-fullscreen', toggleFullscreen);
+
+        function toggleFullscreen(e) {
+            e.preventDefault();
+
+            fullscreenMenu.toggleClass('is-open');
+            body.toggleClass('no-scroll')
+        }
+    });
+});
